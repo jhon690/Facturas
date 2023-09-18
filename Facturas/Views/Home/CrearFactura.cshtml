@@ -1,0 +1,113 @@
+﻿@model CrearDetalleViewModel;
+@{
+    ViewData["Title"] = "CrearFactura";
+}
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-success">
+                <h3 class="text-white text-center">
+                    <strong>Crear nueva Factura</strong>
+                </h3>
+
+            </div>
+            <div class="card-body">
+                <form asp-action="CrearFactura" method="post">
+                    <div asp-asp-validation-summary="All" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="NumeroFactura".value="" class="control-label fw-bold"></label>
+                                <input asp-for="NumeroFactura".value="" class="form-control" placeholder="Ingresa el número de factura" />
+                                <span asp-validation-for="NumeroFactura".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Fecha" class="control-label fw-bold"></label>
+                                <input asp-for="Fecha" class="form-control font-weight-bold" placeholder="Ingresa la fecha" />
+                                <span asp-validation-for="Fecha" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="TipoDePago" class="control-label fw-bold"></label>
+                                <select asp-for="TipoDePago" class="form-select" aria-label="Seleccione un tipo de pago" required>
+                                    <option selected disabled>Seleccione un tipo de pago</option>
+                                    <option value="Contado">Contado</option>
+                                    <option value="Credito">Credito</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="TipoDePago" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="DocumentoCliente".value="" class="control-label fw-bold"></label>
+                                <input asp-for="DocumentoCliente".value="" class="form-control font-weight-bold" placeholder="Ingresa el documento de cliente" />
+                                <span asp-validation-for="DocumentoCliente".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="NombreCliente".value="" class="control-label fw-bold"></label>
+                                <input asp-for="NombreCliente".value="" class="form-control font-weight-bold" placeholder="Ingresa el nombre de cliente" />
+                                <span asp-validation-for="NombreCliente".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Descuento".value="" class="control-label fw-bold"></label>
+                                <input asp-for="Descuento" .value="" class="form-control font-weight-bold" placeholder="Ingresa el descuento" />
+                                <span asp-validation-for="Descuento".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="Cantidad".value="" class="control-label fw-bold"></label>
+                                <input asp-for="Cantidad".value="" class="form-control font-weight-bold" placeholder="Ingresa la cantidad" />
+                                <span asp-validation-for="Cantidad".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="PrecioUnitario".value="" class="control-label fw-bold"></label>
+                                <input asp-for="PrecioUnitario".value="" class="form-control font-weight-bold" placeholder="Ingresa el precio unitario" />
+                                <span asp-validation-for="PrecioUnitario".value="" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-success d-block mx-auto">
+                                    Crear
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <a href="@Url.Action("Index", "Home")" class="btn btn-danger">Volver</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
